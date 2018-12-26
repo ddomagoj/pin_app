@@ -1,5 +1,5 @@
 class PinsController < ApplicationController
-  before_action :find_pin, only: [:show, :edit, :update, :destroy]
+  before_action :find_pin, only: [:show, :edit, :update, :destroy, :upvote]
 
   def index
     @pins = Pin.all.order("RANDOM()")
@@ -38,7 +38,13 @@ class PinsController < ApplicationController
   def destroy
   @pin.destroy
   redirect_to root_path
- end
+  end
+
+  def upvote
+    @pin.upvote_by current_user
+    redirect_back fallback_location: root_path
+   end
+
 
   private
   def pin_params
