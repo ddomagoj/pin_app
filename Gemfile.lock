@@ -254,7 +254,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activestorage
   acts_as_votable (~> 0.12.0)
   aws-sdk-s3
   bootsnap (>= 1.1.0)
