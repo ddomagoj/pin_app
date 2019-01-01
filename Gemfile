@@ -69,3 +69,4 @@ gem 'devise', '~> 4.5'
 gem 'jquery-rails'
 gem 'paperclip', '~> 6.1'
 gem 'acts_as_votable', '~> 0.12.0'
+gem "aws-sdk-s3", require: false
