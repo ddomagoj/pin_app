@@ -18,3 +18,14 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+
+(function() {
+  $(function() {
+    return $("#pins").imagesLoaded(function() {
+      return $("#pins").masonry({
+        itemSelector: ".box",
+        isFitWidth: true
+      });
+    });
+  });
+}.call(this));
