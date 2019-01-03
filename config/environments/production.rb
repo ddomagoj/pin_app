@@ -42,14 +42,14 @@ Rails.application.configure do
   # config.active_storage.service = :local
   config.active_storage.service = :amazon
 
-  config.paperclip_defaults = {
-    s3_credentials: {
-      bucket: ENV.fetch('BUCKETEER_BUCKET_NAME'),
-      access_key_id: ENV.fetch('BUCKETEER_AWS_ACCESS_KEY_ID'),
-      secret_access_key: ENV.fetch('BUCKETEER_AWS_SECRET_ACCESS_KEY'),
-      s3_region: ENV.fetch('AWS_REGION'),
-    }
-  }
+  # config.paperclip_defaults = {
+  #   s3_credentials: {
+  #     bucket: ENV.fetch('BUCKETEER_BUCKET_NAME'),
+  #     access_key_id: ENV.fetch('BUCKETEER_AWS_ACCESS_KEY_ID'),
+  #     secret_access_key: ENV.fetch('BUCKETEER_AWS_SECRET_ACCESS_KEY'),
+  #     s3_region: ENV.fetch('AWS_REGION'),
+  #   }
+  # }
 
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
