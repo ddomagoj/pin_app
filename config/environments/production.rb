@@ -43,12 +43,11 @@ Rails.application.configure do
   config.active_storage.service = :amazon
 
   config.paperclip_defaults = {
-    storage: :s3,
-    service: S3,
-  access_key_id: <%= ENV['BUCKETEER_AWS_ACCESS_KEY_ID'] %>,
-  secret_access_key: <%= ENV['BUCKETEER_AWS_SECRET_ACCESS_KEY'] %>,
-  region: <%= ENV['BUCKETEER_AWS_REGION'] %>,
-  bucket: <%= ENV['BUCKETEER_BUCKET_NAME'] %>
+    s3_credentials: {
+      bucket: ENV.fetch('BUCKETEER_BUCKET_NAME'),
+      access_key_id: ENV.fetch('BUCKETEER_AWS_ACCESS_KEY_ID'),
+      secret_access_key: ENV.fetch('BUCKETEER_AWS_SECRET_ACCESS_KEY'),
+      s3_region: ENV.fetch('AWS_REGION'),
     }
   }
 
